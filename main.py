@@ -11,11 +11,28 @@ class Restaurant:
         print(f"the restaurant {self.restaurant_name} is open!")
 
 
-rustic = Restaurant("Rustic", "Vegetarian")
-taverna = Restaurant("Taverna", "General")
-subway = Restaurant("Subway", "Fastfood")
+class User:
+    def __init__(self, first_name, profile):
+        self.first_name = first_name
+        self.profile = profile
 
-rustic.describe_restaurant()
-taverna.describe_restaurant()
-subway.describe_restaurant()
+    def describe_user(self):
+        print(f'user name: {self.first_name}')
+        print(f'user profile: {self.profile}')
 
+    def greet_user(self):
+        print(f'Hello {self.first_name} you are {self.profile}!')
+
+
+john = User('John', 'default')
+anne = User('Anne', 'premium')
+
+john.describe_user()
+john.greet_user()
+
+anne.describe_user()
+anne.greet_user()
+
+# rustic = Restaurant("Rustic", "Vegetarian")
+# taverna = Restaurant("Taverna", "General")
+# subway = Restaurant("Subway", "Fastfood")
