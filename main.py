@@ -12,7 +12,10 @@ class Restaurant:
 
 
 rustic = Restaurant("Rustic", "Vegetarian")
-print(rustic.restaurant_name)
-print(rustic.cuisine_type)
+taverna = Restaurant("Taverna", "General")
+subway = Restaurant("Subway", "Fastfood")
+
 rustic.describe_restaurant()
-rustic.open_restaurant()
+taverna.describe_restaurant()
+subway.describe_restaurant()
+
