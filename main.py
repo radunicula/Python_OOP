@@ -14,14 +14,15 @@ class Restaurant:
     def set_number_served(self, number):
         self.number_served = number
 
-    def increment_number_served(self, number):
+    def increment_number_served(self, number=1):
         self.number_served += number
 
 
 class User:
-    def __init__(self, first_name, profile):
+    def __init__(self, first_name, profile, login_attempts=0):
         self.first_name = first_name
         self.profile = profile
+        self.login_attempts = login_attempts
 
     def describe_user(self):
         print(f'user name: {self.first_name}')
@@ -30,8 +31,14 @@ class User:
     def greet_user(self):
         print(f'Hello {self.first_name} you are {self.profile}!')
 
+    def increment_login_attempts(self):
+        self.login_attempts += 1
 
-# john = User('John', 'default')
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+
+
+john = User('John', 'default')
 # anne = User('Anne', 'premium')
 #
 # john.describe_user()
@@ -40,14 +47,26 @@ class User:
 # anne.describe_user()
 # anne.greet_user()
 
-rustic = Restaurant("Rustic", "Vegetarian")
-# taverna = Restaurant("Taverna", "General")
-# subway = Restaurant("Subway", "Fastfood")
+# rustic = Restaurant("Rustic", "Vegetarian")
+# # taverna = Restaurant("Taverna", "General")
+# # subway = Restaurant("Subway", "Fastfood")
+#
+# print(rustic.number_served)
+# rustic.number_served = 12
+# print(rustic.number_served)
+# rustic.set_number_served(10)
+# print(rustic.number_served)
+# rustic.increment_number_served()
+# print(rustic.number_served)
 
-print(rustic.number_served)
-rustic.number_served = 12
-print(rustic.number_served)
-rustic.set_number_served(10)
-print(rustic.number_served)
-rustic.increment_number_served(3)
-print(rustic.number_served)
+
+print(john.login_attempts)
+john.increment_login_attempts()
+print(john.login_attempts)
+john.increment_login_attempts()
+john.increment_login_attempts()
+print(john.login_attempts)
+john.reset_login_attempts()
+print(john.login_attempts)
+
+
