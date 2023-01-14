@@ -34,11 +34,10 @@ class User:
         self.login_attempts = 0
 
     def describe_user(self):
-        print(f'user name: {self.first_name}')
-        print(f'user profile: {self.profile}')
+        return f"user name:{self.first_name}, user profile:{self.profile}"
 
     def greet_user(self):
-        print(f'Hello {self.first_name} you are {self.profile}!')
+        return f'Hello {self.first_name} you are {self.profile}!'
 
     def increment_login_attempts(self):
         self.login_attempts += 1
@@ -52,7 +51,7 @@ class Privileges:
         self.privileges = ["can add post", "can delete post", "can ban user"]
 
     def show_privileges(self):
-        print(self.privileges)
+        return self.privileges
 
 
 class Admin(User):
@@ -61,6 +60,5 @@ class Admin(User):
         self.privileges = Privileges()
 
 
-radu = Admin('Radu', 'admin')
-print(radu.privileges.show_privileges())
+
 
