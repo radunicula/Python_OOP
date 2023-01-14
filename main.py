@@ -47,14 +47,20 @@ class User:
         self.login_attempts = 0
 
 
-class Admin(User):
-    def __init__(self, first_name, profile):
-        super().__init__(first_name, profile)
+class Privileges:
+    def __init__(self):
         self.privileges = ["can add post", "can delete post", "can ban user"]
 
     def show_privileges(self):
         print(self.privileges)
 
 
+class Admin(User):
+    def __init__(self, first_name, profile):
+        super().__init__(first_name, profile)
+        self.privileges = Privileges()
+
+
 radu = Admin('Radu', 'admin')
-radu.show_privileges()
+print(radu.privileges.show_privileges())
+
