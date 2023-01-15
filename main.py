@@ -1,11 +1,19 @@
-from user import User, Privileges, Admin
+from user import User
 
-radu = Admin("Radu", "admin")
-radu.describe_user()
-radu.login_attempts = 4
-print(radu.login_attempts)
-radu.reset_login_attempts()
-print(radu.login_attempts)
-radu.increment_login_attempts()
-print(radu.login_attempts)
 
+class Privileges:
+    def __init__(self):
+        self.privileges = ["can add post", "can delete post", "can ban user"]
+
+    def show_privileges(self):
+        return self.privileges
+
+
+class Admin(User):
+    def __init__(self, first_name, profile):
+        super().__init__(first_name, profile)
+        self.privileges = Privileges()
+
+
+radu = Admin(first_name="Radu", profile="admin")
+print(radu.privileges.show_privileges())
