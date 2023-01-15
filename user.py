@@ -17,3 +17,15 @@ class User:
         self.login_attempts = 0
 
 
+class Privileges:
+    def __init__(self):
+        self.privileges = ["can add post", "can delete post", "can ban user"]
+
+    def show_privileges(self):
+        return self.privileges
+
+
+class Admin(User):
+    def __init__(self, first_name, profile):
+        super().__init__(first_name, profile)
+        self.privileges = Privileges()
